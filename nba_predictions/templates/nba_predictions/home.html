@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <title>Home</title>
+        {% endblock %}    
+    </head>
+    
+    <body>
+        {% block body %}
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Matchups <span style="font-size: 22px; color: blue">{{ date }}</span></h1>
+            </div>
+            <div class="col-md-6" align="right" style="padding-top: 28px">
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span></button>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+        </div>
+        
+            <table class="table table-dark table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Away</th>
+                  <th scope="col">Home</th>
+                  <th scope="col">Final Score</th>
+                  <th scope="col">Our Prediction</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for game in rows %}
+                    <tr>
+                      <td><img style="padding-right: 15px" src={{ game.awaypic }}>{{ game.away }}</td>
+                      <td><img style="padding-right: 15px" src={{ game.homepic }}>{{ game.home }}</td>
+                        {% if game.result %}
+                            <td>{{game.result}}</td>
+                        {% else %}
+                            <!--<td>{{ game.time }}</td>-->
+                            <td></td>
+                        {% endif %}
+                      <td>{{ game.winner}}</td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        
+        {% endblock %}
+    </body>
+
+</html>

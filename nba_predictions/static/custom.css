@@ -1,0 +1,26 @@
+.my_container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    margin-left: 101px;
+    margin-right: 101px;
+}
+
+body {
+  padding-top: 60px;
+}
+
+@media (max-width: 979px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
